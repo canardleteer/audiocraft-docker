@@ -16,6 +16,7 @@ docker build -t audiocraft:latest .
 ```shell
 docker run -it --rm \
     -v $(pwd)/cache:/root/.cache \
+    -v $(pwd)/output:/app/output \
     --gpus=all \
     -p 8895:8895 \
     audiocraft:latest
