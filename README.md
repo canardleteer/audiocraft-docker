@@ -14,7 +14,11 @@ docker build -t audiocraft:latest .
 ## Run the image
 
 ```shell
-docker run -it --rm --gpus=all -p 8895:8895 audiocraft:latest
+docker run -it --rm \
+    -v $(pwd)/cache:/root/.cache \
+    --gpus=all \
+    -p 8895:8895 \
+    audiocraft:latest
 ```
 
 I have validated that at least something happens, by running:
