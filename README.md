@@ -39,8 +39,9 @@ docker run -it --rm \
     --gpus=all \
     -p 8895:8895 \
     canardleteer/audiocraft-docker:main
-
 ```
+
+You can now visit the webapp locally: [http://127.0.0.1:8895/](http://127.0.0.1:8895/)
 
 ## Github Action
 
