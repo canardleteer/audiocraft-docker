@@ -29,6 +29,7 @@ gunicorn -w 4 -b 0.0.0.0:8895 -t 120 'scripts.mos:app'  --access-logfile -
 
 ## TODO
 
-- Setup landing pad for downloaded images
+- Setup landing pad for downloaded & generated datasets
+  - Currently, we just capture a `~/.cache`.
 - Setup useful demos script (if one doesn't exist, I haven't looked)
 - Setup reasonable entrypoint
