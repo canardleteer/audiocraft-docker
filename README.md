@@ -55,11 +55,11 @@ If that does work, you should be able to:
 # upstream all the things
 docker pull canardleteer/audiocraft-docker:main
 
-# pinned audiocraft
-docker pull canardleteer/audiocraft-docker:v1.1.0
+# pinned audiocraft (disabled for now)
+# docker pull canardleteer/audiocraft-docker:v1.1.0
 
-# the latest versioned audiocraft
-docker pull canardleteer/audiocraft-docker:v1.1.0
+# the latest versioned audiocraft (disabled for now)
+# docker pull canardleteer/audiocraft-docker:v1.1.0
 ```
 
 ## TODO

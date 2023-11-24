@@ -5,8 +5,9 @@ on:
   push:
     branches:
       - 'main'
-    tags:
-      - 'v**'
+    # NOTE(canardleteer): I can't quite tell why this doesn't work yet. I intend to fix it.
+    # tags:
+    #   - 'v**'
 
 jobs:
   push_to_registry:
