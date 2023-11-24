@@ -17,16 +17,10 @@ RUN apt update && \
 RUN git clone --recurse-submodules --branch ${AUDIOCRAFT_BRANCH} -j8 https://github.com/facebookresearch/audiocraft.git . && \
     pip3 install -e .
 
-# NOTE(canardleteer): Reading through the docs, there is an offering in an
-#                     example. I haven't tested it yet, that listens on this
-#                     port and needs a user defined. I was able to spin it up,
-#                     after making this directory as well. I haven't used it
-#                     more than validating that the simple webui comes up.
 EXPOSE 8895
-ENV USER=genericuser
-RUN mkdir -p /tmp/audiocraft_root/mos_storage
 
-ENTRYPOINT [ "/bin/bash" ]
+# Launch the web app by default, override the entrypoint to load a shell or ipython, or whatever.
+ENTRYPOINT [ "python3", "-m", "demos.musicgen_app", "--listen", "0.0.0.0", "--server_port", "8895" ]
 
 
 

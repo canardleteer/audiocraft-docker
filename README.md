@@ -22,15 +22,10 @@ docker run -it --rm \
     audiocraft:latest
 ```
 
-I have validated that at least something happens, by running:
-
-```shell
-gunicorn -w 4 -b 0.0.0.0:8895 -t 120 'scripts.mos:app'  --access-logfile -
-```
+You can now visit the webapp locally: [http://127.0.0.1:8895/](http://127.0.0.1:8895/)
 
 ## TODO
 
 - Setup landing pad for downloaded & generated datasets
   - Currently, we just capture a `~/.cache`.
-- Setup useful demos script (if one doesn't exist, I haven't looked)
-- Setup reasonable entrypoint
+- Setup reasonable entrypoint (precache of models, webapp, etc)
