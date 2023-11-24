@@ -4,7 +4,7 @@ ARG UBUNTU_VERSION=22.04
 # NOTE(canardleteer): I don't know what the minimal image I should use yet is.
 FROM nvidia/cuda:${CUDA_VERSION}-cudnn8-devel-ubuntu${UBUNTU_VERSION}
 
-ARG AUDIOCRAFT_BRANCH=main
+ARG AUDIOCRAFT_REF=main
 
 WORKDIR /app
 
@@ -14,7 +14,7 @@ RUN apt update && \
     rm -rf /var/lib/apt/lists/* && \
     pip3 install 'torch>=2.0' numpy Flask gunicorn
 
-RUN git clone --recurse-submodules --branch ${AUDIOCRAFT_BRANCH} -j8 https://github.com/facebookresearch/audiocraft.git . && \
+RUN git clone --recurse-submodules --branch ${AUDIOCRAFT_REF} -j8 https://github.com/facebookresearch/audiocraft.git . && \
     pip3 install -e .
 
 EXPOSE 8895
