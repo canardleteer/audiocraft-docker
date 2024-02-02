@@ -5,6 +5,9 @@ image.
 
 No real testing in place other than that it won't publish if it can't build.
 
+Updated 20240201, with what appears to be `1.3.0a1`, but they don't tag
+consistently.
+
 ## Build the image
 
 ```shell
