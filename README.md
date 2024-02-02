@@ -20,6 +20,7 @@ patterns are established.
 ## Run the locally built image
 
 ```shell
+mkdir -p {cache,output};
 docker run -it --rm \
     -v $(pwd)/cache:/root/.cache \
     -v $(pwd)/output:/app/output \
@@ -35,7 +36,7 @@ You can now visit the webapp locally: [http://127.0.0.1:8895/](http://127.0.0.1:
 Link to: [[dockerhub repo]](https://hub.docker.com/r/canardleteer/audiocraft-docker)
 
 ```shell
-mkdir {cache,output};
+mkdir -p {cache,output};
 docker run -it --rm \
     -v $(pwd)/cache:/root/.cache \
     -v $(pwd)/output:/app/output \
@@ -45,6 +46,27 @@ docker run -it --rm \
 ```
 
 You can now visit the webapp locally: [http://127.0.0.1:8895/](http://127.0.0.1:8895/)
+
+## MAGNeT Model
+
+The new MAGNeT Model does work locally, with the cache working appropriately.
+
+It will need to download the model the first time, but should persist to cache.
+
+```shell
+mkdir -p {cache,output};
+docker run -it --rm \
+    -v $(pwd)/cache:/root/.cache \
+    -v $(pwd)/output:/app/output \
+    --gpus=all \
+    -p 8895:8895 \
+    --entrypoint=/usr/bin/python3 \
+    canardleteer/audiocraft-docker:main -m demos.magnet_app --listen 0.0.0.0 --server_port 8895
+```
+
+You can now visit the MAGNeT webapp locally: [http://127.0.0.1:8895/](http://127.0.0.1:8895/)
+
+Not going to both making a second image/profile for it at the moment.
 
 ## Github Action
 
